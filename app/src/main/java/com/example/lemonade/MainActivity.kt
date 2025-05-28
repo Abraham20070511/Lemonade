@@ -39,17 +39,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.lemonade.ui.theme.LemonadeTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        super.onCreate(savedInstanceState)
         setContent {
             LemonadeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                LemonadeApp()
             }
         }
     }
@@ -178,7 +174,7 @@ fun LemonTextAndImage(
 @Preview
 @Composable
 fun LemonPreview() {
-    AppTheme() {
+    LemonadeTheme(){
         LemonadeApp()
     }
 }
